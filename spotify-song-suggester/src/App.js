@@ -1,25 +1,7 @@
 import React from "react";
 import { Fragment } from "react";
 import "./App.css";
-<<<<<<< HEAD
 
-import Header from "./components/dashboard";
-import Login from "./components/Login";
-import Reg from "./components/Reg";
-
-
-function App() {
-
- 
-  return (
-    <div className="App">
-      <h2>Spotify Song Suggester</h2>
-      <Reg />
-      
-    </div>
-  );
-}
-=======
 import Form from "./components/dashboard";
 import "./components/dashboard.css";
 import {
@@ -49,7 +31,7 @@ export default class App extends React.Component {
       isOpen: !this.state.isOpen
     });
   }
->>>>>>> e881f65788cfb4d26f3d15c9227f4b37642dd7b2
+
 
   render() {
     return (

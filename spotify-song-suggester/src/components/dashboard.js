@@ -1,15 +1,6 @@
-<<<<<<< HEAD
-// import React from "react";
-// import Styled from "styled-components";
 
-// const Header = styled.div`
-//   width: 80vw;
-//   height: 15vh;
-//   background: red;
-// `;
 
-// export default Header;
-=======
+
 import React from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
@@ -33,4 +24,4 @@ export default function Form() {
     </form>
   );
 }
->>>>>>> e881f65788cfb4d26f3d15c9227f4b37642dd7b2
+
