@@ -1,0 +1,12 @@
+.searchBar {
+  display: flex;
+  justify-content: center;
+  margin-top: 20%;
+}
+
+.searchBarInner {
+  width: 800px;
+  height: 6vh;
+  background: rgba(253, 171, 171, 0.904);
+  border-radius: 5px;
+}
