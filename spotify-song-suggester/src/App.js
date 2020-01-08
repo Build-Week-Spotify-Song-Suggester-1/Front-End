@@ -15,6 +15,8 @@ import {
 } from "reactstrap";
 import Playlists from "./components/playlists";
 import SearchResults from "./components/search-results";
+import Reg from "./components/Reg";
+import Login from "./components/Login"
 import { Route, Link, BrowserRouter as Router } from "react-router-dom";
 
 export default class App extends React.Component {
@@ -64,14 +66,27 @@ export default class App extends React.Component {
                     <Link to="/Search">Search</Link>
                   </NavLink>
                 </NavItem>
+                <NavItem>
+                  <NavLink className="text-danger">
+                    <Link to="/Login">Log In</Link>
+                  </NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink className="text-danger">
+                    <Link to="/Reg">Sign Up</Link>
+                  </NavLink>
+                </NavItem>
               </Nav>
             </Collapse>
           </Navbar>
 
           <Form />
           {/* <Route path="/AboutUs" component={AboutUs} /> */}
+          
           <Route path="/Playlists" component={Playlists} />
           <Route path="/Search" component={SearchResults} />
+          <Route path="/Reg" component={Reg} />
+          <Route path="/Login" component={Login} />
         </Router>
       </Fragment>
     );

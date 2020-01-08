@@ -2,39 +2,25 @@ import React, { useState } from "react";
 import styled from 'styled-components';
 
 const Div = styled.div`
-    
+    text-align: center;
     background-color: #171330;
     color: #FFF2F2;
     font-family: Muli;
     width: 50%;
     margin: auto;
-    padding: 2.5rem;
+    padding: 2.5rem 3rem 2.5rem 5rem;
     border: 5px solid #fa4252;
   `;
 
   const Ul = styled.div`
     list-style-type:none;
-    line-height: 2.5;
+    line-height: 2;
+    padding: 2rem 3.5rem;
+
     `
 
-  const Button = styled.div`
-    box-shadow:inset 0px 0px 9px 0px #fbafe3;
-	background:linear-gradient(to bottom, #ff5bb0 5%, #ef027d 100%);
-	background-color:#EF019F;
-	border-radius:6px;
-	border:1px solid #ee1eb5;
-	display:inline-block;
-	color:#ffffff;
-	font-size:20px;
-	font-weight:bold;
-	padding:6px 40px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #c70067;
-`;
-// .myButton:hover {
-// background: #1C6EA4; }
-// .myButton:active {
-// background: #144E75; }
+  
+
 
 
 
@@ -64,7 +50,7 @@ const RegForm = props => {
             <legend>Create Account</legend>
             <Ul>
                 <li>
-                  <label htmlFor= "username">Username </label>
+                  <label htmlFor= "username">Username</label>
                     <input 
                        id= "username"
                        type="text"
@@ -75,7 +61,7 @@ const RegForm = props => {
                     />
                 </li>
                 <li>
-                    <label htmlFor= "email">Email </label>
+                    <label htmlFor= "email">Email</label>
                         <input
                         id= "email"
                         type="text"
@@ -98,9 +84,9 @@ const RegForm = props => {
             </Ul>
             </fieldset>
            
-                <Button type='submit'>Submit</Button>
+                <button type='submit'>Submit</button>
            
-                <Button type="button">Have an Account?</Button>
+                <button type="button">Have an Account?</button>
            
         </form>
        </Div>
