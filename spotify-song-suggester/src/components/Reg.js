@@ -1,10 +1,14 @@
 import React, { useState } from "react"; 
+import axios from 'axios';
+import { Link } from 'react-router-dom';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+import * as Yup from 'yup';
 import styled from 'styled-components';
 
 const Div = styled.div`
     text-align: center;
     background-color: #171330;
-    color: #FFF2F2;
+    color: white;
     font-family: Muli;
     width: 50%;
     margin: auto;
@@ -12,84 +16,63 @@ const Div = styled.div`
     border: 5px solid #fa4252;
   `;
 
-  const Ul = styled.div`
-    list-style-type:none;
-    line-height: 2;
-    padding: 2rem 3.5rem;
-
-    `
-
-  
 
 
 
+const validate = ({ username, password}) => {
+    const errors = {};
+    if (!username){
+        errors.username = "You need a username!"
+    } else if (username.length < 3) {
+        errors.username = "You need a longer name!"
+    }
+    if (!password) {
+        errors.age = "You need a password"
+    } else if (password.length < 4) {
+        errors.name = "You need a longer password!"
+    }
+    return errors;
+}
 
-const RegForm = props => {
-    const [Reguser, setRegUser] = useState({
+const Register = props => {
+    const [registerData, setRegisterData] = useState({
         username: "", 
-        email: "",
         Password: ""
         
     });
 
-    const handleChanges = event => {
-        setRegUser({ ...Reguser, [event.target.name]: event.target.value});
-    };
-
-    const submitForm = event => {
-        event.preventDefault();
-        props.addNewUser(Reguser);
-        setRegUser({ username: "", email: "", password: ""});
-    };
-
     return(
-        <Div>
-        <form onSubmit={submitForm}>
-            <h2>Sign Up!</h2>
-            <fieldset>
-            <legend>Create Account</legend>
-            <Ul>
-                <li>
-                  <label htmlFor= "username">Username</label>
-                    <input 
-                       id= "username"
-                       type="text"
-                       name="username"
-                       placeholder="username"
-                       onChange={handleChanges}
-                       value={Reguser.username}
-                    />
-                </li>
-                <li>
-                    <label htmlFor= "email">Email</label>
-                        <input
-                        id= "email"
-                        type="text"
-                        name="email"
-                        placeholder="email"
-                        onChange={handleChanges}
-                        value={Reguser.role}/>
-               </li>
+        <Div className='form-login'>
+            <h2>Register</h2>
+          <Formik
+            onSubmit={(values, tools) =>{
+            tools.resetForm();
+        }}
 
-               <li>
-                    <label htmlFor= "password">Password </label>
-                        <input
-                        id= "password"
-                        type="text"
-                        name="password"
-                        placeholder="password"
-                        onChange={handleChanges}
-                        value={Reguser.role}/>
-                </li>
-            </Ul>
-            </fieldset>
+            validate={validate}
+            initialValues={{
+                username: '',
+                password: ''
+            }}
            
-                <button type='submit'>Submit</button>
-           
-                <button type="button">Have an Account?</button>
-           
-        </form>
+         render={props => {
+                return (
+                  <Form>
+                    <Field name="username" type="text" placeholder="enter username" />
+                    <ErrorMessage name="username" component="div" className="red" />
+
+                    <Field name="password" type="text" placeholder="enter password" />
+                    <ErrorMessage name="password" component="div" className="red" />
+                
+                    <button type='submit'>Submit</button>
+                    <Link to='/login'><button>Login</button></Link>
+                 </Form>
+           );
+          }}
+         />
+        
        </Div>
     );
 };
-export default RegForm;
+export default Register;
+

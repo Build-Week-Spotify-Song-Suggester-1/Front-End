@@ -1,5 +1,8 @@
-import React, { useState } from "react"; 
+import React, { useState, useEffect } from "react"; 
 import styled from 'styled-components';
+import axios from 'axios';
+import ReactDOM from "react-dom";
+import { Formik, Form, Field, ErrorMessage } from 'formik';
 
 const Div = styled.div`
     text-align: center;
@@ -17,6 +20,24 @@ line-height: 2;
 padding: 2rem 3.5rem;
 
 `
+function Login(){
+    const [login, setLogin] = useState("");
+    useEffect(() => {
+        axios
+        .get("https://weightlifting-journal.herokuapp.com/")
+        .then(res => setLogin(res.data.message))
+        .catch(err => console.log(err));
+    },[]);
+
+    return (
+        <span className="Login">
+            <h2>Does it work?</h2>
+        </span>
+    );
+}
+
+
+
 
 
 const LoginForm = props => {
@@ -51,6 +72,7 @@ const LoginForm = props => {
                 placeholder="username"
                 onChange={handleChanges}
                 value={Loginuser.username}
+                
                 />
             </li>
             <li>
@@ -72,4 +94,6 @@ const LoginForm = props => {
         </Div>
     );
 };
+
+
 export default LoginForm;
