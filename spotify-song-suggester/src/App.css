@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+  display: flex;
+  
+  
 }
 
 .App-logo {
@@ -37,7 +40,14 @@
   }
 }
 
-body {
-  background: url("./images/bckgrnd1.jpg");
-  background-size: cover;
+.Main {
+  background-image: url("./images/bckgrnd1.jpg");
+  height: 100vh;
+
+}
+
+.Navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;;
 }

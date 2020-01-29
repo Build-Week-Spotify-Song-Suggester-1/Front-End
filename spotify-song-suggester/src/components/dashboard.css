@@ -1,12 +1,26 @@
 .searchBar {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   margin-top: 20%;
 }
 
 .searchBarInner {
   width: 800px;
   height: 6vh;
-  background: rgba(253, 171, 171, 0.904);
+  background: black;
+  border-radius: 5px;
+  color: white;
+  border: none;
+  outline: none;
+  padding: 5px;
+}
+
+.Submitter {
+  width: 200px;
+  margin-top: 10px;
+  outline: none;
+  border: none;
+  background: #1DB954;
   border-radius: 5px;
 }

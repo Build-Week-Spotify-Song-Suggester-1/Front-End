@@ -35,41 +35,43 @@ export default class App extends React.Component {
     return (
       <Fragment>
         <Router>
-          <Navbar color="dark" light expand="md">
-            <NavbarBrand className="text-warning" href="/">
-              Symphinity
+          <div className="Main">
+            <Navbar color="dark" light expand="md"  >
+              <NavbarBrand href="/" style={{ color: '#1DB954', marginRight: '1050px' }}>
+                Symphinity
             </NavbarBrand>
-            <NavbarToggler onClick={this.toggle} />
-            <Collapse isOpen={this.state.isOpen} navbar>
-              <Nav className="ml-auto" navbar>
-                <NavItem>
-                  <NavLink className="text-danger">
-                    <Link to="/">Home</Link>
-                  </NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink className="text-danger">
-                    <Link to="/AboutUs">About Us</Link>
-                  </NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink className="text-danger">
-                    <Link to="/Playlists">Saved Playlists</Link>
-                  </NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink className="text-danger">
-                    <Link to="/Search">Search</Link>
-                  </NavLink>
-                </NavItem>
-              </Nav>
-            </Collapse>
-          </Navbar>
+              <NavbarToggler onClick={this.toggle} />
+              <Collapse isOpen={this.state.isOpen} navbar>
+                <Nav navbar>
+                  <NavItem>
+                    <NavLink>
+                      <Link style={{ color: '#1DB954' }} to="/">Home</Link>
+                    </NavLink>
+                  </NavItem>
+                  <NavItem>
+                    <NavLink >
+                      <Link style={{ color: '#1DB954' }} to="/AboutUs">About Us</Link>
+                    </NavLink>
+                  </NavItem>
+                  <NavItem>
+                    <NavLink >
+                      <Link style={{ color: '#1DB954' }} to="/Playlists">Saved Playlists</Link>
+                    </NavLink>
+                  </NavItem>
+                  <NavItem>
+                    <NavLink >
+                      <Link style={{ color: '#1DB954' }} to="/Search">Search</Link>
+                    </NavLink>
+                  </NavItem>
+                </Nav>
+              </Collapse>
+            </Navbar>
 
-          <Form />
-          {/* <Route path="/AboutUs" component={AboutUs} /> */}
-          <Route path="/Playlists" component={Playlists} />
-          <Route path="/Search" component={SearchResults} />
+            <Form />
+            {/* <Route path="/AboutUs" component={AboutUs} /> */}
+            <Route path="/Playlists" component={Playlists} />
+            <Route path="/Search" component={SearchResults} />
+          </div>
         </Router>
       </Fragment>
     );

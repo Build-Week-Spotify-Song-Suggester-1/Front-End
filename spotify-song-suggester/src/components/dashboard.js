@@ -18,7 +18,7 @@ export default function Form() {
         ref={register({ min: 1 })}
       />
 
-      <input type="submit" />
+      <input className="Submitter" type="submit" />
     </form>
   );
 }
